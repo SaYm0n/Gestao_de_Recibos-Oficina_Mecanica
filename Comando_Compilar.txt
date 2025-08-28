@@ -1,0 +1,16 @@
+pyinstaller --noconfirm --onefile --windowed ^
+--icon=resources/app.ico ^
+--add-data "resources;resources" ^
+--collect-all weasyprint ^
+--collect-all numpy ^
+--hidden-import "numpy._distributor_init" ^
+--hidden-import "pandas._libs.tslibs.np_datetime" ^
+--hidden-import "pandas._libs.tslibs.np_timedelta" ^
+--hidden-import "numpy.core.multiarray" ^
+--hidden-import "numpy.core.numeric" ^
+--hidden-import "numpy.linalg" ^
+--hidden-import "cairocffi.backend" ^
+--hidden-import "pypangocairo._ffi" ^
+--hidden-import "weasyprint.text.ffi" ^
+--add-binary "C:\msys64\mingw64\bin;." ^
+"ReciboApp.py"
